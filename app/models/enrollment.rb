@@ -10,14 +10,15 @@
 #
 class Enrollment < ApplicationRecord
 
-    belongs_to: course,
+    belongs_to :course,
         primary_key: :id,
-        foriegn_key: :course_id,
-        class_name: :course
+        foreign_key: :course_id,
+        class_name: :Course
         
-    has_many :users,
+    belongs_to :user,
         primary_key: :id,
-        foriegn_key: :user_id,
-        class_name: :user
+        foreign_key: :student_id,
+        class_name: :User
+
 
 end
